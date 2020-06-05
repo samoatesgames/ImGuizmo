@@ -2,9 +2,6 @@
 #include "imgui_internal.h"
 #define IMAPP_IMPL
 
-#include <vector>
-#include <algorithm>
-
 #include "ImApp.h"
 #include "ImGuizmo.h"
 #include "ImGuizmoHelper.h"
