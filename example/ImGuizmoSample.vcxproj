@@ -147,6 +147,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\ImGuizmo.h" />
+    <ClInclude Include="ExampleCamera.h" />
     <ClInclude Include="external\imgui\imconfig.h" />
     <ClInclude Include="external\imgui\imgui.h" />
     <ClInclude Include="external\imgui\imgui_internal.h" />
@@ -158,9 +159,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\ImGuizmo.cpp" />
+    <ClCompile Include="ExampleCamera.cpp" />
     <ClCompile Include="external\imgui\imgui.cpp" />
     <ClCompile Include="external\imgui\imgui_draw.cpp" />
     <ClCompile Include="external\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="ImGuizmoHelper.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

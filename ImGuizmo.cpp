@@ -844,7 +844,7 @@ namespace ImGuizmo
    void SetDrawlist()
    {
       gContext.mDrawList = ImGui::GetWindowDrawList();
-}
+   }
 
    void BeginFrame()
    {
@@ -1445,10 +1445,10 @@ namespace ImGuizmo
 
             switch (operation)
             {
-               case TRANSLATE: type = GetMoveType(&gizmoHitProportion); break;
-               case ROTATE: type = GetRotateType(); break;
-               case SCALE: type = GetScaleType(); break;
-               case BOUNDS: break;
+            case TRANSLATE: type = GetMoveType(&gizmoHitProportion); break;
+            case ROTATE: type = GetRotateType(); break;
+            case SCALE: type = GetScaleType(); break;
+            case BOUNDS: break;
             }
             if (type != NONE)
             {
@@ -2157,7 +2157,7 @@ namespace ImGuizmo
    {
       matrix_t viewInverse;
       viewInverse.Inverse(*(matrix_t*)view);
-      
+
       struct CubeFace
       {
          float z;
@@ -2243,20 +2243,20 @@ namespace ImGuizmo
                cubeFace.faceCoordsScreen[iCoord] = worldToPos(faceCoords[iCoord] * 0.5f * invert, res);
             }
             cubeFace.color = directionColor[normalIndex] | 0x808080;
-            
+
             cubeFace.z = centerPositionVP.z / centerPositionVP.w;
             cubeFaceCount++;
          }
       }
-      qsort(faces, cubeFaceCount, sizeof(CubeFace), [](void const* _a, void const* _b){
-            CubeFace* a = (CubeFace*)_a;
-            CubeFace* b = (CubeFace*)_b;
-            if (a->z < b->z)
-            {
-               return 1;
-            }
-            return -1;
-         });
+      qsort(faces, cubeFaceCount, sizeof(CubeFace), [](void const* _a, void const* _b) {
+         CubeFace* a = (CubeFace*)_a;
+         CubeFace* b = (CubeFace*)_b;
+         if (a->z < b->z)
+         {
+            return 1;
+         }
+         return -1;
+      });
       // draw face with lighter color
       for (int iFace = 0; iFace < cubeFaceCount; iFace++)
       {
@@ -2271,7 +2271,7 @@ namespace ImGuizmo
       vec_t frustum[6];
       ComputeFrustumPlanes(frustum, viewProjection.m16);
       matrix_t res = *(matrix_t*)matrix * viewProjection;
-         
+
       for (float f = -gridSize; f <= gridSize; f += 1.f)
       {
          for (int dir = 0; dir < 2; dir++)

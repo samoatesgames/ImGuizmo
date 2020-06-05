@@ -12,6 +12,10 @@
     <ClCompile Include="external\imgui\imgui_widgets.cpp">
       <Filter>imgui</Filter>
     </ClCompile>
+    <ClCompile Include="ExampleCamera.cpp">
+      <Filter>example</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGuizmoHelper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\ImGuizmo.h" />
@@ -35,10 +39,16 @@
       <Filter>imgui</Filter>
     </ClInclude>
     <ClInclude Include="ImGuizmoHelper.h" />
+    <ClInclude Include="ExampleCamera.h">
+      <Filter>example</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="imgui">
       <UniqueIdentifier>{c35e7062-d3df-44e0-9b3d-bbcc567539cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="example">
+      <UniqueIdentifier>{8149a056-ed4b-4cab-81dc-61c5de8fdc78}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
