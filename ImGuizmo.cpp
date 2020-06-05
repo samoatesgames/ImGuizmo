@@ -1030,7 +1030,7 @@ namespace ImGuizmo
          float axisLengthInClipSpace = GetSegmentLengthClipSpace(makeVect(0.f, 0.f, 0.f), dirAxis * gContext.mScreenFactor);
 
          float paraSurf = GetParallelogram(makeVect(0.f, 0.f, 0.f), dirPlaneX * gContext.mScreenFactor, dirPlaneY * gContext.mScreenFactor);
-         belowPlaneLimit = (paraSurf > 0.0025f);
+         belowPlaneLimit = (paraSurf > 0.001f);
          belowAxisLimit = (axisLengthInClipSpace > 0.02f);
 
          // and store values
@@ -1697,7 +1697,7 @@ namespace ImGuizmo
 
          vec_t closestPointOnAxis = PointOnSegment(makeVect(posOnPlanScreen), makeVect(axisStartOnScreen), makeVect(axisEndOnScreen));
 
-         if ((closestPointOnAxis - makeVect(posOnPlanScreen)).Length() < 12.f) // pixel size
+         if ((closestPointOnAxis - makeVect(posOnPlanScreen)).Length() < 3.f) // pixel size
          {
             type = MOVE_X + i;
          }
