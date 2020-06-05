@@ -16,11 +16,6 @@ Built against DearImgui 1.53WIP
 There is now a sample for Win32/OpenGL ! With a binary in bin directory.
 ![Image of Sample](https://i.imgur.com/nXlzyqD.png)
 
-### ImSequencer
-A WIP little sequencer used to edit frame start/end for different events in a timeline.
-![Image of Rotation](http://i.imgur.com/BeyNwCn.png)
-Check the sample for the documentation. More to come...
-
 ### API doc
 
 Call BeginFrame right after ImGui_XXXX_NewFrame();
