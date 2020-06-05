@@ -648,6 +648,7 @@ namespace ImGuizmo
 
       //
       bool mDrawHatchedNegativeAxis{ true };
+      float mPixelSize{ 6.0f };
 
       // bounds stretching
       vec_t mBoundsPivot;
@@ -1204,7 +1205,7 @@ namespace ImGuizmo
             drawList->AddLine(baseSSpace, worldDirSSpace, colors[i + 1], 3.f);
             drawList->AddCircleFilled(worldDirSSpace, 6.f, colors[i + 1]);
 
-            if (gContext.mAxisFactor[i] < 0.f)
+            if (gContext.mDrawHatchedNegativeAxis && gContext.mAxisFactor[i] < 0.f)
             {
                DrawHatchedAxis(dirAxis * scaleDisplay[i]);
             }
@@ -1615,7 +1616,7 @@ namespace ImGuizmo
 
          vec_t closestPointOnAxis = PointOnSegment(makeVect(posOnPlanScreen), makeVect(axisStartOnScreen), makeVect(axisEndOnScreen));
 
-         if ((closestPointOnAxis - makeVect(posOnPlanScreen)).Length() < 12.f) // pixel size
+         if ((closestPointOnAxis - makeVect(posOnPlanScreen)).Length() < gContext.mPixelSize) // pixel size
          {
             type = SCALE_X + i;
          }
@@ -1657,7 +1658,7 @@ namespace ImGuizmo
          ImVec2 distanceOnScreen = idealPosOnCircleScreen - io.MousePos;
 
          float distance = makeVect(distanceOnScreen).Length();
-         if (distance < 8.f) // pixel size
+         if (distance < gContext.mPixelSize) // pixel size
          {
             type = ROTATE_X + i;
          }
@@ -1697,7 +1698,7 @@ namespace ImGuizmo
 
          vec_t closestPointOnAxis = PointOnSegment(makeVect(posOnPlanScreen), makeVect(axisStartOnScreen), makeVect(axisEndOnScreen));
 
-         if ((closestPointOnAxis - makeVect(posOnPlanScreen)).Length() < 3.f) // pixel size
+         if ((closestPointOnAxis - makeVect(posOnPlanScreen)).Length() < gContext.mPixelSize) // pixel size
          {
             type = MOVE_X + i;
          }
@@ -2055,6 +2056,11 @@ namespace ImGuizmo
    void DrawHatchedNegativeAxis(bool draw)
    {
       gContext.mDrawHatchedNegativeAxis = draw;
+   }
+
+   void SetPixelSize(float size)
+   {
+      gContext.mPixelSize = size;
    }
 
    void Manipulate(const float* view, const float* projection, OPERATION operation, MODE mode, float* matrix, float* deltaMatrix, float* snap, float* localBounds, float* boundsSnap)

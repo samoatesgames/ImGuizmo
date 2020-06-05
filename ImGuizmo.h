@@ -182,4 +182,6 @@ namespace ImGuizmo
    IMGUI_API void SetID(int id);
 
    IMGUI_API void DrawHatchedNegativeAxis(bool draw);
+
+   IMGUI_API void SetPixelSize(float size);
 };

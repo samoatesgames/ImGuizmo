@@ -117,6 +117,7 @@ int main(int, char**)
       ImGuizmo::BeginFrame();
       ImGuizmo::SetOrthographic(!camera.IsPerspective());
       ImGuizmo::DrawHatchedNegativeAxis(false);
+      ImGuizmo::SetPixelSize(6.0f);
       
       float* cameraView = camera.GetViewMatrix();
       float* cameraProjection = camera.GetProjectionMatrix(io.DisplaySize.x, io.DisplaySize.y);
