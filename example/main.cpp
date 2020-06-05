@@ -104,8 +104,6 @@ int main(int, char**)
    camera.SetPerspectiveCamera(true);
    camera.SetPosition(0, 5, -10);
 
-   bool viewDirty = true;
-
    // Main loop
    while (!imApp.Done())
    {
