@@ -646,6 +646,9 @@ namespace ImGuizmo
       bool mBelowPlaneLimit[3];
       float mAxisFactor[3];
 
+      //
+      bool mDrawHatchedNegativeAxis{ true };
+
       // bounds stretching
       vec_t mBoundsPivot;
       vec_t mBoundsAnchor;
@@ -1274,7 +1277,7 @@ namespace ImGuizmo
             drawList->AddTriangleFilled(worldDirSSpace - dir, a + ortogonalDir, a - ortogonalDir, colors[i + 1]);
             // Arrow head end
 
-            if (gContext.mAxisFactor[i] < 0.f)
+            if (gContext.mDrawHatchedNegativeAxis && gContext.mAxisFactor[i] < 0.f)
             {
                DrawHatchedAxis(dirAxis);
             }
@@ -2047,6 +2050,11 @@ namespace ImGuizmo
    void SetID(int id)
    {
       gContext.mActualID = id;
+   }
+
+   void DrawHatchedNegativeAxis(bool draw)
+   {
+      gContext.mDrawHatchedNegativeAxis = draw;
    }
 
    void Manipulate(const float* view, const float* projection, OPERATION operation, MODE mode, float* matrix, float* deltaMatrix, float* snap, float* localBounds, float* boundsSnap)
