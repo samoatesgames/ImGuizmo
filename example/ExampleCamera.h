@@ -10,7 +10,7 @@ private:
    float m_projectionMatrix[16];
 
    bool m_isPerspective{ false };
-   float m_fieldOfView{ 27.0f };
+   float m_fieldOfView{ 60.0f };
    float m_orthographicViewWidth{ 10.0f };
 
    float m_position[3]{ 0.0f, 0.0f, -1.0f };

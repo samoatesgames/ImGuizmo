@@ -29,7 +29,7 @@ void Frustum(float left, float right, float bottom, float top, float znear, floa
 void Perspective(float fovyInDegrees, float aspectRatio, float znear, float zfar, float *m16)
 {
    float ymax, xmax;
-   ymax = znear * tanf(fovyInDegrees * 3.141592f / 180.0f);
+   ymax = znear * tanf((fovyInDegrees * 0.5f) * 3.141592f / 180.0f);
    xmax = ymax * aspectRatio;
    Frustum(-xmax, xmax, -ymax, ymax, znear, zfar, m16);
 }
