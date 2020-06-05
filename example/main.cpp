@@ -124,7 +124,7 @@ int main(int, char**)
 
       ImGuizmo::SetRect(0, 0, io.DisplaySize.x, io.DisplaySize.y);
       ImGuizmo::DrawGrid(cameraView, cameraProjection, identityMatrix, 100.f);
-      ImGuizmo::DrawCubes(cameraView, cameraProjection, objectMatrix, 1);
+      ImGuizmo::DrawCube(cameraView, cameraProjection, objectMatrix);
       ImGuizmo::Manipulate(cameraView, cameraProjection, currentGizmoOperation, currentGizmoMode, objectMatrix, NULL, NULL, NULL, NULL);
       ImGuizmo::ViewManipulate(camera.GetViewMatrix(), camera.DistanceToLookAt(), ImVec2(io.DisplaySize.x - 128, 0), ImVec2(128, 128), NULL);
 

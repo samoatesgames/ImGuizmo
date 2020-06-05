@@ -2153,6 +2153,11 @@ namespace ImGuizmo
       }
    }
 
+   void DrawCube(const float* view, const float* projection, const float* matrix)
+   {
+      DrawCubes(view, projection, matrix, 1);
+   }
+
    void DrawCubes(const float* view, const float* projection, const float* matrices, int matrixCount)
    {
       matrix_t viewInverse;
