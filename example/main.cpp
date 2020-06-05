@@ -1,4 +1,5 @@
 #include "imgui.h"
+#include "imgui_internal.h"
 #define IMAPP_IMPL
 
 #include <math.h>
@@ -7,7 +8,6 @@
 
 #include "ImApp.h"
 #include "ImGuizmo.h"
-#include "imgui_internal.h"
 
 //
 //
