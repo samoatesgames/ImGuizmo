@@ -34,6 +34,7 @@
     <ClInclude Include="external\imgui\imstb_truetype.h">
       <Filter>imgui</Filter>
     </ClInclude>
+    <ClInclude Include="ImGuizmoHelper.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="imgui">

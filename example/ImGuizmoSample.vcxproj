@@ -154,6 +154,7 @@
     <ClInclude Include="external\imgui\imstb_textedit.h" />
     <ClInclude Include="external\imgui\imstb_truetype.h" />
     <ClInclude Include="ImApp.h" />
+    <ClInclude Include="ImGuizmoHelper.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\ImGuizmo.cpp" />
