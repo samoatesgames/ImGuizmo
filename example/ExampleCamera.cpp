@@ -3,6 +3,7 @@
 #include "ImGuizmoHelper.h"
 
 #include <algorithm>
+#include <cmath>
 
 ExampleCamera::ExampleCamera()
 {
@@ -26,7 +27,7 @@ float ExampleCamera::DistanceToLookAt()
       m_position[2] - m_lookAt[2],
    };
 
-   return sqrt((distance[0] * distance[0]) + (distance[1] * distance[1]) + (distance[2] * distance[2]));
+   return static_cast<float>(std::sqrt((distance[0] * distance[0]) + (distance[1] * distance[1]) + (distance[2] * distance[2])));
 }
 
 void ExampleCamera::SetPosition(float x, float y, float z)
@@ -58,7 +59,7 @@ float* ExampleCamera::GetProjectionMatrix(float displayWidth, float displayHeigh
    }
    else
    {
-      float viewHeight = m_orthographicViewWidth * displayHeight / displayWidth;
+      const float viewHeight = m_orthographicViewWidth * displayHeight / displayWidth;
       OrthoGraphic(-m_orthographicViewWidth, m_orthographicViewWidth, -viewHeight, viewHeight, 1000.f, -1000.f, m_projectionMatrix);
    }
 

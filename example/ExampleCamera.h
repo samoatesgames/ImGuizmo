@@ -1,13 +1,11 @@
 #pragma once
 
-#include "imgui.h"
-
 class ExampleCamera {
 
 private:
 
-   float m_viewMatrix[16];
-   float m_projectionMatrix[16];
+   float m_viewMatrix[16]{};
+   float m_projectionMatrix[16]{};
 
    bool m_isPerspective{ false };
    float m_fieldOfView{ 60.0f };
@@ -21,7 +19,7 @@ public:
    ExampleCamera();
 
    void SetPerspectiveCamera(bool isPerspectiveCamera) { m_isPerspective = isPerspectiveCamera; }
-   bool IsPerspective() { return m_isPerspective; }
+   bool IsPerspective() const { return m_isPerspective; }
 
    void SetFieldOfView(float fov) { m_fieldOfView = fov; }
    float* GetFieldOfView() { return &m_fieldOfView; }
@@ -37,6 +35,6 @@ public:
 public:
 
    float* GetViewMatrix();
-   float* GetProjectionMatrix(float displayWidth, float displayHeigh);
+   float* GetProjectionMatrix(float displayWidth, float displayHeight);
 
 };
