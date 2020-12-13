@@ -4,8 +4,6 @@
 
 #include "ImApp.h"
 #include "ImGuizmo.h"
-#include "ImGuizmoHelper.h"
-
 #include "example/ExampleCamera.h"
 
 void EditCamera(ExampleCamera& camera)
@@ -125,8 +123,8 @@ int main(int, char**)
       ImGuizmo::SetRect(0, 0, io.DisplaySize.x, io.DisplaySize.y);
       ImGuizmo::DrawGrid(cameraView, cameraProjection, identityMatrix, 100.f);
       ImGuizmo::DrawCube(cameraView, cameraProjection, objectMatrix);
-      ImGuizmo::Manipulate(cameraView, cameraProjection, currentGizmoOperation, currentGizmoMode, objectMatrix, NULL, NULL, NULL, NULL);
-      ImGuizmo::ViewManipulate(camera.GetViewMatrix(), camera.DistanceToLookAt(), ImVec2(io.DisplaySize.x - 128, 0), ImVec2(128, 128), NULL);
+      ImGuizmo::Manipulate(cameraView, cameraProjection, currentGizmoOperation, currentGizmoMode, objectMatrix, nullptr, nullptr, nullptr, nullptr);
+      ImGuizmo::ViewManipulate(camera.GetViewMatrix(), camera.DistanceToLookAt(), ImVec2(io.DisplaySize.x - 128, 0), ImVec2(128, 128), ImU32(0));
 
       glClearColor(0.45f, 0.4f, 0.4f, 1.f);
       glClear(GL_COLOR_BUFFER_BIT);
